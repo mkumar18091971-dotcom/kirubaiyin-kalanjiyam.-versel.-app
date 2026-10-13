@@ -7,40 +7,48 @@
 <title>கிருபையின் களஞ்சியம்</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{min-height:100vh;display:flex;justify-content:center;background:linear-gradient(135deg,#fff8e1,#ffecb3);padding:0}
-.app{width:100%;max-width:420px;background:white;min-height:100vh;display:flex;flex-direction:column}
-.header{background:linear-gradient(135deg,#e8b84b,#b47f1a);padding:16px;display:flex;align-items:center;gap:12px;color:white}
-.logo{width:60px;height:60px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px}
-.header h1{font-size:22px;font-weight:800;line-height:1.2}
-.sub{background:#fff3d6;color:#8a6d1b;text-align:center;padding:10px;font-size:14px;font-weight:600}
-.buttons{flex:1;display:flex;flex-direction:column;gap:14px;padding:18px;background:white}
-.btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,#fbe9bb,#f5d78e);color:#5a4210;font-size:16px;font-weight:700;display:flex;gap:12px;text-align:left}
-.footer{background:#fbe9bb;display:flex;justify-content:space-around;padding:14px 0;border-top:1px solid #f5d78e}
-.footer i{font-size:22px;color:#b47f1a}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Noto Sans Tamil",system-ui}
+body{min-height:100vh;display:flex;justify-content:center;background:#f2f2f2;padding:0}
+.app{width:100%;max-width:430px;background:white;min-height:100vh;display:flex;flex-direction:column;box-shadow:0 0 20px rgba(0,0,0,0.1)}
+.header{background:linear-gradient(135deg,#f2c14e 0%,#d6930a 100%);padding:18px 20px;display:flex;align-items:center;gap:14px;color:white}
+.logo-wrap{width:90px;height:90px;background:radial-gradient(circle at center,#fff8dc,#f5e6a0);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.2);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;flex-shrink:0}
+.logo-wrap .dove{font-size:42px;line-height:1}
+.logo-wrap .txt{font-size:9px;color:#0a58a0;font-weight:800;line-height:1.1;margin-top:-2px}
+.header h1{font-size:30px;font-weight:800;line-height:1.15;text-shadow:0 1px 2px rgba(0,0,0,0.2)}
+.sub{color:#1a5a9a;text-align:center;padding:16px 10px 10px;font-size:18px;font-weight:700}
+.buttons{flex:1;display:flex;flex-direction:column;gap:16px;padding:10px 20px 20px;background:white}
+.btn{width:100%;padding:18px 20px;border:none;border-radius:30px;background:linear-gradient(180deg,#3aa0ff,#0b6fd1);color:white;font-size:19px;font-weight:700;display:flex;align-items:center;gap:14px;box-shadow:0 4px 10px rgba(11,111,209,0.3);text-align:left;line-height:1.2}
+.btn i{font-size:26px;min-width:30px;text-align:center}
+.footer{background:#fdeab0;display:flex;justify-content:space-around;align-items:center;padding:16px 0;border-top:1px solid #f5d78e}
+.footer i{font-size:28px;color:#c89a2c}
+.footer i.active{color:#a67c0a}
 </style>
 </head>
 <body>
 <div class="app">
 <div class="header">
-<div class="logo">✝️</div>
+<div class="logo-wrap">
+<div class="dove">🕊️</div>
+<div class="txt">Christ for<br>every soul</div>
+</div>
 <h1>கிருபையின்<br>களஞ்சியம்</h1>
 </div>
-<div class="sub">கிருபை ஒவ்வொரு ஆத்துமாவையும் நிறைவாக்கும்</div>
+<div class="sub">கிருபை ஒவ்வொரு ஆத்துமாவிற்கும்</div>
 <div class="buttons">
-<button class="btn">📖 1. ஆவிக்குரிய சிந்தனைகள்</button>
-<button class="btn">🎵 2. ஆராதனை பாடல்கள்</button>
-<button class="btn">🎵 3. சிறுவர் பாடல்கள்</button>
-<button class="btn">👨‍🏫 4. சிறுவர் கதைகள்</button>
-<button class="btn">📖 5. சிறுவர் வசனங்கள்</button>
-<button class="btn">🙏 6. ஜெப குறிப்புகள்</button>
+<button class="btn"><i class="fa-solid fa-book-open"></i> 1. ஆவிக்குரிய புத்தகம்</button>
+<button class="btn"><i class="fa-solid fa-music"></i> 2. ஆராதனை கீதங்கள்</button>
+<button class="btn"><i class="fa-solid fa-music"></i> 3. சுவிசேஷ பாடல்கள்</button>
+<button class="btn"><i class="fa-solid fa-child"></i> 4. சிறுவர் பாடல்கள்</button>
+<button class="btn"><i class="fa-solid fa-book-open"></i> 5. சிறுவர் கதைகள்</button>
+<button class="btn"><i class="fa-solid fa-chart-simple"></i> 6. எண்கள் விளக்கம்</button>
+<button class="btn"><i class="fa-solid fa-comments"></i> 7. பிரசங்க குறிப்பு / ஆலோசனை மையம்</button>
 </div>
 <div class="footer">
-<i class="fa-solid fa-house"></i>
-<i class="fa-solid fa-book-bible"></i>
-<i class="fa-solid fa-music"></i>
-<i class="fa-solid fa-user"></i>
+<i class="fa-solid fa-house active"></i>
+<i class="fa-solid fa-magnifying-glass"></i>
+<i class="fa-solid fa-heart"></i>
+<i class="fa-regular fa-user"></i>
 </div>
 </div>
 </body>
-  </html>
+</html>
