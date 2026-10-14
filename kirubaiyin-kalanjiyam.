@@ -1,13 +1,8 @@
-!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>கிருபையின் களஞ்சியம்</title>
-</head>
-<body style="text-align:center; padding:50px; font-family:sans-serif;">
-<h1 style="color:#7c3aed;">கிருபையின் களஞ்சியம்</h1>
-<h2>தேவனுக்கே மகிமை!</h2>
-<p>Website வெற்றிகரமாக இயங்குகிறது!</p>
-</body>
-</html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>கிருபையின் களஞ்சியம் - பாடல் Admin</title><style>body{font-family:Arial;background:#E8F5E9;margin:0;padding:10px}.card{background:#fff;padding:15px;border-radius:15px;max-width:600px;margin:auto;box-shadow:0 2px 10px #ccc}input,textarea{width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #aaa;box-sizing:border-box}button{padding:10px;border:none;border-radius:8px;font-weight:bold}.save{background:#2E7D32;color:#fff;width:100%;font-size:18px;padding:14px}.edit{background:#FF9800;color:#fff}.del{background:#f44336;color:#fff}.song{background:#F1F8E9;border-left:5px solid #2E7D32;margin:10px 0;padding:12px;border-radius:8px}</style></head><body><div class="card"><h2 style="text-align:center;color:#2E7D32">🎵 கிருபையின் களஞ்சியம் - பாடல் நிர்வாகம்</h2><input type="hidden" id="editIndex" value="-1"><input id="sno" type="number" placeholder="பாடல் எண்"><input id="title" placeholder="பாடல் தலைப்பு"><textarea id="lyrics" rows="10" placeholder="பாடல் வரிகள்"></textarea><input id="note" placeholder="ராகம் / குறிப்பு"><button class="save" onclick="saveSong()">💾 சேமிக்க / UPDATE</button><button onclick="clearForm()" style="width:100%;background:#999;color:#fff;margin-top:6px">🔄 புதியது</button><p id="msg" style="text-align:center;color:green;font-weight:bold"></p><hr><div id="list"></div></div><script>
+let STORAGE_KEY='kirubai_songs';
+function saveSong(){let no=sno.value,t=title.value,l=lyrics.value,n=note.value;if(!t||!l)return alert('தலைப்பு, பாடல் எழுதுங்கள்');let d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');let obj={no:no,title:t,lyrics:l,note:n,date:new Date().toLocaleDateString('ta-IN')};let idx=parseInt(editIndex.value);if(idx>=0){d=obj;}else{d.push(obj);}d.sort((a,b)=>(parseInt(a.no)||999)-(parseInt(b.no)||999));localStorage.setItem(STORAGE_KEY,JSON.stringify(d));clearForm();showList();}
+function editSong(i){let d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');let it=d;sno.value=it.no;title.value=it.title;lyrics.value=it.lyrics;note.value=it.note||'';editIndex.value=i;window.scrollTo(0,0);}
+function delSong(i){if(!confirm('நீக்கவா?'))return;let d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');d.splice(i,1);localStorage.setItem(STORAGE_KEY,JSON.stringify(d));showList();}
+function clearForm(){sno.value=title.value=lyrics.value=note.value='';editIndex.value=-1;}
+function showList(){let d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');let h='';d.forEach((x,i)=>{h+=`<div class="song"><b>${x.no||''}. ${x.title}</b><br><pre style="white-space:pre-wrap;font-family:Arial">${x.lyrics.substring(0,120)}...</pre><div style="display:flex;gap:6px"><button class="edit" onclick="editSong(${i})" style="flex:1">✏️ Edit</button><button class="del" onclick="delSong(${i})" style="flex:1">🗑️ Delete</button></div></div>`});list.innerHTML=h;}showList();
+</script></body></html>[idx][i]
