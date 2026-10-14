@@ -46,8 +46,8 @@ function saveSong(){
   let d=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
   let obj={no:no,title:t,lyrics:l,note:n,date:new Date().toLocaleDateString('ta-IN')};
   let idx=parseInt(document.getElementById('editIndex').value);
-  if(idx>=0){d=obj;document.getElementById('msg').innerText='✅ UPDATE ஆனது!';}
-  else{d.push(obj);document.getElementById('msg').innerText='✅ புதிய பாடல் சேர்ந்தது!';}
+  if(idx>=0){d=obj;document.getElementById('msg').innerText='UPDATE ஆனது!';}
+  else{d.push(obj);document.getElementById('msg').innerText='புதிய பாடல் சேர்ந்தது!';}
   http://d.sort((a,b)=>(parseInt(a.no)||999)-(parseInt(b.no)||999));
   http://localStorage.setItem(STORAGE_KEY,JSON.stringify(d));
   clearForm();
@@ -84,7 +84,7 @@ function showList(){
   if(!d.length){listDiv.innerHTML='<p>பாடல் இல்லை</p>';return;}
   let h='';
   http://d.forEach((x,i)=>{
-    h+=`<div class="song"><b>${x.no||''}. ${x.title}</b><br><small>${x.note||''} | ${x.date||''}</small><pre>${x.lyrics.substring(0,120)}...</pre><div style="display:flex;gap:6px"><button class="edit" onclick="editSong(${i})" style="flex:1">✏️ Edit</button><button class="del" onclick="delSong(${i})" style="flex:1">🗑️ Delete</button></div></div>`;
+    h+='<div class="song"><b>'+(x.no||'')+'. '+x.title+'</b><br><small>'+(x.note||'')+' | '+(x.date||'')+'</small><pre>'+x.lyrics.substring(0,120)+'...</pre><div style="display:flex;gap:6px"><button class="edit" onclick="editSong('+i+')" style="flex:1">Edit</button><button class="del" onclick="delSong('+i+')" style="flex:1">Delete</button></div></div>';
   });
   http://listDiv.innerHTML=h;
 }
